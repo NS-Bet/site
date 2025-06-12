@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #636B2F;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+#coins-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coin {
+    position: absolute;
+    top: -100px;
+    width: 40px;
+    height: 40px;
+    background-image: url('assets/coin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 20%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    max-width: 90%;
+}
+
+h1 {
+    color: #D4DE95;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: 10px;
+}
+
+p {
+    color: #D4DE95;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1rem, 4vw, 2rem);
+    margin-bottom: clamp(20px, 10vw, 50px);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #BAC095;
+    color: #3D4127;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    padding: clamp(12px, 3vw, 20px) clamp(24px, 6vw, 40px);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
